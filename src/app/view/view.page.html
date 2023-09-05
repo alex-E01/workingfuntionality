@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-header>EDIT HOURS</ion-header>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" text="" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-text color="danger"><h5>Availbility</h5></ion-text>
+<ng-container >
+ <ion-row *ngFor="let item of viewdata; let i = index">
+   <ion-col size="4">{{item.day}}</ion-col>
+   <ion-col size="3">{{item.start_time}}</ion-col>
+   <ion-col size="1">To</ion-col>
+   <ion-col size="3">{{item.end_time}}</ion-col>
+   </ion-row>
+  </ng-container>
+
+<ion-button (click)="goToBin(viewdata)" >Update</ion-button>
+</ion-content>

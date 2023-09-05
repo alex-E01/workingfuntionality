@@ -1,0 +1,109 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-header>Update HOURS</ion-header>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" text="" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-text color="danger"><h5>Update Availbility</h5></ion-text>
+
+ <ion-row>
+   <ion-col size="3">Monday</ion-col>
+   <ion-col size="2"><ion-toggle [(ngModel)]="monday" ></ion-toggle></ion-col>
+  <ng-container *ngIf="monday">
+   <ion-col size="3"><ion-input type="time" [(ngModel)]="mon_start_time"></ion-input></ion-col>
+   <ion-col size="1">To</ion-col>
+   <ion-col size="3"><ion-input  type="time"[(ngModel)]="mon_end_time"></ion-input></ion-col>
+  </ng-container>
+  <ng-container *ngIf="!monday">
+    <ion-text color="danger">Closed</ion-text>
+  </ng-container>
+ </ion-row> 
+
+ <ion-row>
+  <ion-col size="3">Tuesday</ion-col>
+  <ion-col size="2"><ion-toggle [(ngModel)]="tuesday"></ion-toggle></ion-col>
+  <ng-container *ngIf="tuesday">
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="tue_start_time"></ion-input></ion-col>
+  <ion-col size="1">To</ion-col>
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="tue_end_time"></ion-input></ion-col>
+</ng-container >
+
+  <ng-container *ngIf="!tuesday">
+    <ion-text color="danger">Closed</ion-text>
+  </ng-container>
+
+</ion-row>
+
+<ion-row>
+  <ion-col size="3">Wednesday</ion-col>
+  <ion-col size="2"><ion-toggle [(ngModel)]="wednesday"></ion-toggle></ion-col>
+
+  <ng-container *ngIf="wednesday">
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="wed_start_time"></ion-input></ion-col>
+  <ion-col size="1">To</ion-col>
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="wed_end_time"></ion-input></ion-col>
+  </ng-container>
+
+  <ng-container *ngIf="!wednesday">
+    <ion-text color="danger" >Closed</ion-text>
+  </ng-container>
+</ion-row>
+
+<ion-row>
+  <ion-col size="3">Thursday</ion-col>
+  <ion-col size="2"><ion-toggle [(ngModel)]="thursday"></ion-toggle></ion-col>
+  <ng-container *ngIf="thursday">
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="thu_start_time"></ion-input></ion-col>
+  <ion-col size="1">To</ion-col>
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="thu_end_time"></ion-input></ion-col>
+</ng-container>
+  <ng-container *ngIf="!thursday">
+    <ion-text color="danger">Closed</ion-text>
+  </ng-container>
+</ion-row>
+
+<ion-row>
+  <ion-col size="3">Friday</ion-col>
+  <ion-col size="2"><ion-toggle [(ngModel)]="friday"></ion-toggle></ion-col>
+  <ng-container *ngIf="friday">
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="fri_start_time"></ion-input></ion-col>
+  <ion-col size="1">To</ion-col>
+  <ion-col size="3"><ion-input  type="time"  [(ngModel)]="fri_end_time"></ion-input></ion-col>
+</ng-container>
+<ng-container *ngIf="!friday">
+  <ion-text color="danger">Closed</ion-text>
+</ng-container>
+</ion-row>
+
+<ion-row>
+  <ion-col size="3">Saturday</ion-col>
+  <ion-col size="2"><ion-toggle [(ngModel)]="saturday"></ion-toggle></ion-col>
+  <ng-container *ngIf="saturday">
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="sat_start_time"></ion-input></ion-col>
+  <ion-col size="1">To</ion-col>
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="sat_end_time"></ion-input></ion-col>
+</ng-container>
+<ng-container *ngIf="!saturday">
+  <ion-text color="danger">Closed</ion-text>
+</ng-container>
+</ion-row>
+
+<ion-row>
+  <ion-col size="3">Sunday</ion-col>
+  <ion-col size="2"><ion-toggle [(ngModel)]="sunday"></ion-toggle></ion-col>
+  <ng-container *ngIf="sunday">
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="sun_start_time"></ion-input></ion-col>
+  <ion-col size="1">To</ion-col>
+  <ion-col size="3"><ion-input  type="time" [(ngModel)]="sun_end_time"></ion-input></ion-col>
+</ng-container>
+<ng-container *ngIf="!sunday">
+  <ion-text color="danger">Closed</ion-text>
+</ng-container>
+</ion-row>
+<ion-button   (click)="updatedata()">Update Details</ion-button>
+</ion-content>
